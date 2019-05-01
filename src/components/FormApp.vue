@@ -13,21 +13,26 @@
 
       </div>      
     </div>
+
+    <div class="row"> 
+      <div class="col-md-12 header"><h1> Mood tracker</h1></div>
+    </div>
       <div :class="[cond == true? 'formblock' :'']">
+        
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <!-- Mood Tracker -->
-            <h2> How is your mood today ?</h2>
+            <h2> Mood Level </h2>
             <circle-slider :side="200" :circle-width-rel="15" :min="0" :max="10" :step-size="1" circle-color="#554AC9"
             progress-color="#FDC84A"
             knob-color="#FDC84A" v-model.lazy="mood"></circle-slider>
             <img class="img" :src="'../../static/emojies/mood'+mood+'.png'" width="100%">      
       </div>
       
-        <div class="col-md-6">
+        <div class="col-md-12">
     
             <!-- stress Tracker -->
-            <h2> How much you feel stress ?</h2>
+            <h2> Stress Level</h2>
             <circle-slider :side="200" :circle-width-rel="15" :min="0" :max="10" :step-size="1" circle-color="#554AC9"
             progress-color="#FDC84A"
             knob-color="#FDC84A" v-model="stress"> </circle-slider>
@@ -45,6 +50,7 @@
       </div>
 
       <div class="row">
+        <div class="col-md-3"></div>
         <div class="col-md-6">
         
         <div class="shift">
@@ -64,8 +70,13 @@
           </div>
           </div> 
         </div>
+        
+        <div class="col-md-3"></div>
+        </div>
 
-        <div class="col-md-6"> 
+        <div class="row">
+          <div class="col-md-3"></div>
+        <div class="col-md-6 "> 
           
         <div class="location">
           <h2 :class="[error == true? 'error' : '']">Where is you location ?</h2>
@@ -83,6 +94,7 @@
         </div>
             </div>
         </div>
+        <div class="col-md-3"></div>
       </div>
 
       <div class="row"  style="margin-top:220px;">
@@ -90,9 +102,9 @@
         <div class="col-md-8">
           <label for="validationTextarea"> <h2 :class="[error == true || comment == ''? 'error' : '']"> Do you have Any comments? </h2> </label>
           <textarea class="form-control textarea" name="textarea" id="validationTextarea" placeholder="Tell us something new about yourself" rows="5" v-model="comment"></textarea>
-          <div class="col-md-12">         
+          <div class="col-md-12" style="text-align:left; font-size:13px;">     
+            <label for="defaultCheck1" :class="[error == true? 'error' : '']">    
             <input type="checkbox" value="agree" v-model="disclaimer">          
-          <label style="text-align:left;" for="defaultCheck1" :class="[error == true? 'error' : '']">
             Disclaimer - The IGNITE Mood Tracker application is intended for informational, educational and research purposes only.
            </label>
            </div>
@@ -161,7 +173,7 @@ export default {
   }, */
   methods: {
     submitted: function () {
-      if (this.rule == null || this.shift == null || this.location == null || (this.comment == null || this.comment === '')) {
+      if (this.rule == null || this.shift == null || this.location == null || (this.comment == null || this.comment === '') || this.disclaimer == null) {
         this.error = true
         alert('You have to check your inputs please')
       } else {

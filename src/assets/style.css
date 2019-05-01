@@ -1,0 +1,411 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,600');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600');
+
+body {
+  font-family: 'Raleway', sans-serif;
+  text-align: left;
+  background-color: #f4f4f4;
+}
+
+i{
+  display: block;
+  margin-top: 10px;
+}
+
+h2{
+  margin-top:30px;
+}
+
+.btn-submit{
+width: 15%;
+margin: 20px 20px;  
+}
+
+.rule{
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.radioText{
+width: 30%;
+margin: 5px 10px;
+position: relative;
+float: left;
+font-size: 13px;
+padding: 10px 10px;
+color: #fff;
+background-color: #554AC9;
+transition: all .2s ease-in-out;  
+}
+
+.rule .radioText:hover{
+  background-color: #FDC84A;
+  color: #334860;
+}
+
+.rule input:checked ~ .radioText{
+  background-color: #FDC84A;
+  color: #334860;
+}
+
+.shift .right,
+.shift .left,
+.location .up,
+.location .down{
+  position: relative;
+  margin-top:30px;
+  margin-left:33%;
+}
+
+.far{
+font-weight: 900;
+}
+
+.fa-2x {
+  font-size: 1.5em;
+}
+
+.btn-group:after, .btn-group-vertical>.btn-group:before, .btn-toolbar:after, .btn-toolbar:before, .clearfix:after, .clearfix:before, .container-fluid:after, .container-fluid:before, .container:after, .container:before, .dl-horizontal dd:after, .dl-horizontal dd:before, .form-horizontal .form-group:after, .form-horizontal .form-group:before, .modal-footer:after, .modal-footer:before, .modal-header:after, .modal-header:before, .nav:after, .nav:before, .navbar-collapse:after, .navbar-collapse:before, .navbar-header:after, .navbar-header:before, .navbar:after, .navbar:before, .pager:after, .pager:before, .panel-body:after, .panel-body:before, .row:after, .row:before{
+  display: none;
+  content: '';
+}
+
+.img {
+  position: relative;
+  width: 20%;
+  margin-top: -220px;
+}
+
+.radioStyle {
+  display: block;
+  cursor: pointer;
+  font-size: 20px;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radioStyle input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmarkl {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 180px;
+  width:  90px;
+  color: #fff;
+  background-color: #554AC9;
+  border-bottom-left-radius: 90px;
+  border-top-left-radius: 90px;
+  transition: all .2s ease-in-out;
+  text-align: center;
+}
+
+/* On mouse-over, add a grey background color */
+.radioStyle:hover input ~ .checkmarkl {
+  background-color: #FDC84A;
+  color: #334860;
+}
+
+/* When the radio button is checked, add a blue background */
+.radioStyle input:checked ~ .checkmarkl {
+  background-color: #FDC84A;
+  color: #334860;
+  
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmarkl::before {
+  content: "Night";
+  position: absolute;
+  display: block;
+  font-weight: 400;
+}
+
+
+/* Style the indicator (dot/circle) */
+.radioStyle .checkmarkl::before {
+  top: 30%;
+	right: 65%;
+	width: 8px;
+	height: 8px;
+}
+.checkmarkl i{
+  position: absolute;
+  vertical-align: middle;
+  right: 20%;
+  top: 50%;
+  }
+
+/* right half of circle */
+.checkmarkr {
+  position: absolute;
+  top: 0;
+  left: 95px;
+  height: 180px;
+  width:  90px;
+  color: #fff;
+  background-color: #554AC9;
+  border-bottom-right-radius: 90px;
+  border-top-right-radius: 90px;
+  text-align: center;
+  transition: all .2s ease-in-out;
+}
+
+/* On mouse-over, add a grey background color */
+.radioStyle:hover input ~ .checkmarkr {
+  background-color: #FDC84A;
+  color: #334860;
+}
+
+/* When the radio button is checked, add a blue background */
+.radioStyle input:checked ~ .checkmarkr {
+  background-color: #FDC84A;
+  color: #334860;
+}
+
+input:checked ~ .checkmarkr {
+  background-color: #FDC84A;
+  color: #334860;
+}
+
+
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmarkr::before {
+  content: "Day";
+  position: absolute;
+  display: block;
+  font-weight: 400;
+}
+
+
+/* Style the indicator (dot/circle) */
+.radioStyle .checkmarkr::before {
+ 	top: 30%;
+	right: 70%;
+	width: 8px;
+	height: 8px;
+}
+
+.checkmarkr i{
+  position: absolute;
+  vertical-align: middle;
+  left: 20%;
+  top: 50%;
+}
+
+.checkmarkr:hover{
+  transform: scale(1.1);
+  z-index: 10000;
+  border:0;
+}
+
+.checkmarkl:hover{
+  transform: scale(1.1);
+  z-index: 10000;
+  border:0;
+}
+
+
+/* up down circles */
+
+.checkmarks {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  height: 90px;
+  width:  180px;
+  color: #fff;
+  background-color: #554AC9;
+  border-top-left-radius: 90px;
+  border-top-right-radius: 90px;
+  transition: all .2s ease-in-out;
+  text-align: center;
+  
+}
+
+/* On mouse-over, add a grey background color */
+.radioStyle:hover input ~ .checkmarks {
+  background-color: #FDC84A;
+  color: #334860;
+}
+
+/* When the radio button is checked, add a blue background */
+.radioStyle input:checked ~ .checkmarks {
+  background-color: #FDC84A;
+  color: #334860;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmarks::before {
+  content: "North";
+  position: absolute;
+  display: block;
+  font-weight: 400;
+}
+
+
+/* Style the indicator (dot/circle) */
+.radioStyle .checkmarks::before {
+  top: 40%;
+	right: 70%;
+	width: 8px;
+	height: 8px;
+}
+.checkmarks i{
+  position: absolute;
+  vertical-align: middle;
+  right: 20%;
+  top: 25%;
+  }
+
+/* DOwn half of circle*/
+.checkmarkn {
+  position: absolute;
+  top: 95px;
+  left: 0;
+  height: 90px;
+  width:  180px;
+  color: #fff;
+  background-color: #554AC9;
+  border-bottom-left-radius: 90px;
+  border-bottom-right-radius: 90px;
+  transition: all .2s ease-in-out;
+  text-align: center;
+}
+
+/* On mouse-over, add a grey background color */
+.radioStyle:hover input ~ .checkmarkn {
+  background-color: #FDC84A;
+  color: #334860;
+}
+
+/* When the radio button is checked, add a blue background */
+.radioStyle input:checked ~ .checkmarkn {
+  background-color: #FDC84A;
+  color: #334860;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmarkn::before {
+  content: "South";
+  position: absolute;
+  display: block;
+  font-weight: 400;
+}
+
+
+/* Style the indicator (dot/circle) */
+.radioStyle .checkmarkn::before {
+  top: 20%;
+	right: 70%;
+	width: 8px;
+	height: 8px;
+}
+.checkmarkn i{
+  position: absolute;
+  vertical-align: middle;
+  right: 20%;
+  top: 10%;
+  }
+
+  .checkmarks:hover{
+    transform: scale(1.1);
+    z-index: 10000;
+  }
+  
+  .checkmarkn:hover{
+    transform: scale(1.1);
+    z-index: 10000;
+  }
+
+  .textarea{
+    position: relative;
+    font-size: 13px;
+    color: #554AC9;
+  }
+
+  textarea::-webkit-input-placeholder {
+    color: #554AC9;
+    font-size:13px;
+  }
+  
+  .clear{
+    clear: both;
+  }
+
+  .formblock{
+    display: none;
+  }
+  .submittedModal{
+    position: absolute;
+    top:5%;
+    left: 0;
+    width: 100%;
+    margin:0 auto;
+    background-color: #554AC9;
+    color: #fff;
+  }
+
+  .submittedModal p{
+    font-size: 20px;
+  }
+
+  .submittedModal span{
+    color: #FDC84A;
+  }
+
+  @media (max-width: 768px){
+.col-md-6 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.shift{
+  margin-bottom:200px;
+}
+}
+
+@media only screen and (max-width: 600px) {
+  .col-md-6 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.shift{
+  margin-bottom:200px;
+}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) 
+@media only screen and (max-width: 600px) {
+  .shift{
+    margin-bottom:200px;
+  }
+
+  radioText{
+    float: left;
+    width: 80%;
+  }
+} */
+
+/* Medium devices (landscape tablets, 768px and up) 
+@media only screen and (max-width: 768px) {
+ 
+  .radioText{
+    float: left;
+    width: 60%;
+  }
+} 
+*/
+/* Large devices (laptops/desktops, 992px and up) 
+@media only screen and (max-width: 992px) {
+  .radioText{
+    float: left;
+    width: 40%;
+  }
+} */

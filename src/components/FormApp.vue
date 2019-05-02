@@ -23,9 +23,9 @@
         <div class="col-md-12">
             <!-- Mood Tracker -->
             <h2> Mood Level </h2>
-            <circle-slider :side="200" :circle-width-rel="15" :min="0" :max="10" :step-size="1" circle-color="#554AC9"
+            <circle-slider :side="200" :circle-width-rel="15" :min="0" :max="101" :step-size="1" circle-color="#554AC9"
             progress-color="#FDC84A"
-            knob-color="#FDC84A" v-model.lazy="mood"></circle-slider>
+            knob-color="#FDC84A" v-model.lazy="moodSlider"></circle-slider>
             <img class="img" :src="'../../static/emojies/mood'+mood+'.png'" width="100%">      
       </div>
       
@@ -33,9 +33,9 @@
     
             <!-- stress Tracker -->
             <h2> Stress Level</h2>
-            <circle-slider :side="200" :circle-width-rel="15" :min="0" :max="10" :step-size="1" circle-color="#554AC9"
+            <circle-slider :side="200" :circle-width-rel="15" :min="0" :max="101" :step-size="1" circle-color="#554AC9"
             progress-color="#FDC84A"
-            knob-color="#FDC84A" v-model="stress"> </circle-slider>
+            knob-color="#FDC84A" v-model="stressSlider"> </circle-slider>
             <img class="img" :src="'../../static/emojies/stress'+stress+'.png'" width="100%">
           </div>
       </div>
@@ -132,6 +132,8 @@ export default {
       cond: false,
       disclaimer: null,
       mood: null,
+      moodSlider: null,
+      stressSlider: null,
       stress: null,
       rule: null,
       shift: null,
@@ -146,31 +148,58 @@ export default {
         'Registered Dietition (RD)']
     }
   },
-  /* watch: {
-    mood: function (mood) {
-      if (this.mood > -1 && this.mood < 10) {
+  watch: {
+    moodSlider: function (moodSlider) {
+      if (moodSlider > -1 && moodSlider < 10) {
         this.mood = 0
-      } else if (this.mood > 9 && this.mood < 20) {
+      } else if (moodSlider > 9 && moodSlider < 20) {
         this.mood = 1
-      } else if (this.mood > 19 && this.mood < 30) {
+      } else if (moodSlider > 19 && moodSlider < 30) {
         this.mood = 2
-      } else if (this.mood > 29 && this.mood < 40) {
+      } else if (moodSlider > 29 && moodSlider < 40) {
         this.mood = 3
-      } else if (this.mood > 39 && this.mood < 50) {
+      } else if (moodSlider > 39 && moodSlider < 50) {
         this.mood = 4
-      } else if (this.mood > 49 && this.mood < 60) {
+      } else if (moodSlider > 49 && moodSlider < 60) {
         this.mood = 5
-      } else if (this.mood > 59 && this.mood < 70) {
+      } else if (moodSlider > 59 && moodSlider < 70) {
         this.mood = 6
-      } else if (this.mood > 69 && this.mood < 80) {
+      } else if (moodSlider > 69 && moodSlider < 80) {
         this.mood = 7
-      } else if (this.mood > 79 && this.mood < 90) {
+      } else if (moodSlider > 79 && moodSlider < 90) {
         this.mood = 8
-      } else if (this.mood > 89 && this.mood < 100) {
+      } else if (moodSlider > 89 && moodSlider < 100) {
         this.mood = 9
+      } else if (moodSlider === 100) {
+        this.mood = 10
+      }
+    },
+    stressSlider: function (stressSlider) {
+      if (stressSlider > -1 && stressSlider < 10) {
+        this.stress = 0
+      } else if (stressSlider > 9 && stressSlider < 20) {
+        this.stress = 1
+      } else if (stressSlider > 19 && stressSlider < 30) {
+        this.stress = 2
+      } else if (stressSlider > 29 && stressSlider < 40) {
+        this.stress = 3
+      } else if (stressSlider > 39 && stressSlider < 50) {
+        this.stress = 4
+      } else if (stressSlider > 49 && stressSlider < 60) {
+        this.stress = 5
+      } else if (stressSlider > 59 && stressSlider < 70) {
+        this.stress = 6
+      } else if (stressSlider > 69 && stressSlider < 80) {
+        this.stress = 7
+      } else if (stressSlider > 79 && stressSlider < 90) {
+        this.stress = 8
+      } else if (stressSlider > 89 && stressSlider < 100) {
+        this.stress = 9
+      } else if (stressSlider === 100) {
+        this.stress = 10
       }
     }
-  }, */
+  },
   methods: {
     submitted: function () {
       if (this.rule == null || this.shift == null || this.location == null || (this.comment == null || this.comment === '') || this.disclaimer == null) {

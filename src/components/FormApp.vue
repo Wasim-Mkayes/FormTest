@@ -22,7 +22,7 @@
       <div class="row">
         <div class="col-md-12">
             <!-- Mood Tracker -->
-            <h2> Mood Level </h2>
+            <h2> What is your mood? </h2>
             <circle-slider :side="200" :circle-width-rel="15" :min="0" :max="101" :step-size="1" circle-color="#554AC9"
             progress-color="#FDC84A"
             knob-color="#FDC84A" v-model.lazy="moodSlider"></circle-slider>
@@ -32,7 +32,7 @@
         <div class="col-md-12">
     
             <!-- stress Tracker -->
-            <h2> Stress Level</h2>
+            <h2> What is your stress level?</h2>
             <circle-slider :side="200" :circle-width-rel="15" :min="0" :max="101" :step-size="1" circle-color="#554AC9"
             progress-color="#FDC84A"
             knob-color="#FDC84A" v-model="stressSlider"> </circle-slider>
@@ -41,7 +41,7 @@
       </div>
       
       <div class="row"> 
-        <div class="col-md-12 rule"> <h2 :class="[error == true? 'error' : '']"> What is your Rule </h2>
+        <div class="col-md-12 rule"> <h2 :class="[error == true? 'error' : '']"> What is your Role? </h2>
           <label class="radioStyle" v-for="item in ruleText" v-bind:key="item">
             <input type="radio" name="options" :value="item" v-model="rule"> 
             <span class="radioText"> {{item}} </span>
@@ -54,7 +54,7 @@
         <div class="col-md-6">
         
         <div class="shift">
-          <h2 :class="[error == true? 'error' : '']">When is your Shift ?</h2>
+          <h2 :class="[error == true? 'error' : '']">What is your Shift?</h2>
           <div class="left">
         <label class="radioStyle">
           <input type="radio" name="radio" value="Night" v-model="shift">
@@ -79,7 +79,7 @@
         <div class="col-md-6 "> 
           
         <div class="location">
-          <h2 :class="[error == true? 'error' : '']">Where is you location ?</h2>
+          <h2 :class="[error == true? 'error' : '']">What is you location?</h2>
           <div class="up">
         <label class="radioStyle">
           <input type="radio" name="radio2" value="North" v-model="location">
@@ -100,9 +100,9 @@
       <div class="row"  style="margin-top:220px;">
         <div class="col-md-2"></div>
         <div class="col-md-8">
-          <label for="validationTextarea"> <h2 :class="[error == true || comment == ''? 'error' : '']"> Do you have Any comments? </h2> </label>
+          <label for="validationTextarea"> <h2 :class="[error == true || comment == ''? 'error' : '']"> Comments </h2> </label>
           <textarea class="form-control textarea" name="textarea" id="validationTextarea" placeholder="Tell us something new about yourself" rows="5" v-model="comment"></textarea>
-          <div class="col-md-12" style="text-align:left; font-size:13px;">     
+          <div class="col-md-12" style="text-align:left; font-size:14px;">     
             <label for="defaultCheck1" :class="[error == true? 'error' : '']">    
             <input type="checkbox" value="agree" v-model="disclaimer">          
             Disclaimer - The IGNITE Mood Tracker application is intended for informational, educational and research purposes only.
@@ -139,13 +139,17 @@ export default {
       shift: null,
       location: null,
       comment: null,
-      ruleText: [ 'Physician (MD)',
-        'Nurse Practitioner (APN)',
-        'Nurse (RN)',
-        'Certifed Nursing assistant (CNA)',
-        'Respiratory Therapist (RT)',
+      ruleText: [ 'Physician',
+        'Nurse Practitioner',
+        'Nurse',
+        'Certifed Nursing assistant',
+        'Respiratory Therapist',
         'Pharmacist',
-        'Registered Dietition (RD)']
+        'Registered Dietition',
+        'Social Worker',
+        'Case Manager',
+        'Chaplain',
+        'Unit Clerk']
     }
   },
   watch: {
